@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/BlogPost.astro";
+
+const publicImageUrl = import.meta.env.PUBLIC_CDN_BASE_URL;
+---
+
+<Layout
+  title="About Me"
+  description="About Hollis and cathollis.com"
+  pubDate={new Date("April 05 2026")}
+>
+  <div style="display: flex;align-items: center;flex-direction: column;">
+    <img
+      style="width: 16rem; height: 16rem"
+      src={`${publicImageUrl}/resources/avatars/1440x.webp`}
+    />
+    <p>My avatar</p>
+  </div>
+</Layout>
+
+<p>
+  The meaning of word "cat" in cathollis.com is a small carnivorous mammal. It also means a Unix utility that concatenates and lists files. 
+</p>

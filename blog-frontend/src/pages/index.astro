@@ -1,0 +1,48 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
+const catMessage = "cat hollis > /dev/null";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>{catMessage}</h1>
+      <p>Hello, this is hollis.</p>
+      <p>
+        I'm interested in:
+        <ul>
+          <li>Coding</li>
+          <li>VOCALOID: Hatsune miku</li>
+          <li>ACG</li>
+          <li>Network</li>
+          <li>
+            Photography: I'm using Canon EOS 5D Mark III with EF 17-40mm, EF
+            28-135mm, EF 70-200 and Nikomat FT2 with Nikon AI 50mm F1.2
+          </li>
+          <li>Rail transit</li>
+          <li>Travel</li>
+          <li>
+            Video games:
+            <ul>
+              <li>World of warships</li>
+              <li>Cities: Skylines II</li>
+              <li>Euro Truck Simulator 2</li>
+            </ul>
+          </li>
+        </ul>
+      </p>
+      <p>You can communication with me in Chinese/English.</p>
+      <p>Building the blog...</p>
+    </main>
+    <Footer />
+  </body>
+</html>
