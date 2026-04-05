@@ -1,10 +1,10 @@
 ---
-import Layout from "../layouts/BlogPost.astro";
+import PostLayout from "../layouts/PostLayout.astro";
 
 const publicImageUrl = import.meta.env.PUBLIC_CDN_BASE_URL;
 ---
 
-<Layout
+<PostLayout
   title="About Me"
   description="About Hollis and cathollis.com"
   pubDate={new Date("April 05 2026")}
@@ -21,4 +21,4 @@ const publicImageUrl = import.meta.env.PUBLIC_CDN_BASE_URL;
     The meaning of word "cat" in cathollis.com is a small carnivorous mammal. It
     also means a Unix utility that concatenates and lists files.
   </p>
-</Layout>
+</PostLayout>
