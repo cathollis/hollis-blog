@@ -1,0 +1,20 @@
+---
+interface Props {
+	blogName: string;
+	description : string;
+	caption: string;
+
+}
+
+const { blobName, description, caption } = Astro.props;
+
+const publicImageUrl = import.meta.env.PUBLIC_CDN_BASE_URL;
+const src = `${publicImageUrl}/blog/${blobName}`;
+---
+
+<div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.75em;">
+		<img alt={description} src={src}></img>
+		<span style="color: rgb(var(--gray))">{caption}</span>
+</div>
+<style>
+</style>
