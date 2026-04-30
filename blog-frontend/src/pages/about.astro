@@ -21,4 +21,34 @@ const publicImageUrl = import.meta.env.PUBLIC_CDN_BASE_URL;
     The meaning of word "cat" in cathollis.com is a small carnivorous mammal. It
     also means a Unix utility that concatenates and lists files.
   </p>
+
+  <h3>blog media encode infos</h3>
+  <div>
+    <h4>Image</h4>
+    <h5>aspect ratio</h5>
+    <p>Images on this website use one of the following aspect ratio: 3:2, 16:9, 16:10, 1.35:1, 1.85:1, 2.35:1, 4:3, 1:1</p>
+    <p>They are all common aspect ratio in photograph, television, web and films.</p>
+    <h5>size</h5>
+    <p>All images will be resize to 1440x.</p>
+    <h5>colorspace</h5>
+    <p>originally AdobeRGB/P3, but will processed to sRGB</p>
+    <h5>encode</h5>
+    <p>webp</p>
+    <h5>desensitization</h5>
+    <p>For the characters appearing in the picture, apply the mosaic algorithm.</p>
+    <p>For reflective objects appearing in the picture, because they may expose information, apply the gaussian blur algorithm.</p>
+    <h5>command</h5>
+    using imagemagick
+    <pre
+      style="white-space: pre-wrap">magick .\in.xxx -filter Lanczos -resize "1440x1440>" -quality 50 -define webp:lossless=false -define webp:auto-filter=true -define webp:method=6 out.webp</pre>
+  </div>
+  <div>
+    <h4>Video</h4>
+    <h5>command</h5>
+    encode using ffmpeg with libamo1
+    <pre
+      style="white-space: pre-wrap">ffmpeg -i .\in.xxx  -c:v libaom-av1 -vf "scale=-1:720" -b:v 1M -pix_fmt yuv420p -an -pass 1 -f null NUL</pre>
+    <pre
+      style="white-space: pre-wrap">ffmpeg -i .\in.xxx  -c:v libaom-av1 -vf "scale=-1:720" -b:v 1M -pix_fmt yuv420p -an -pass 2 out.webm</pre>
+  </div>
 </PostLayout>
