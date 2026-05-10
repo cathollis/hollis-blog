@@ -52,8 +52,8 @@
 
 body {
   font-family:
-    "Ubuntu", "GlowSansSC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
-    "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+    "Ubuntu", "GlowSansSC", "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -102,12 +102,13 @@ b {
 }
 a {
   color: var(--accent);
+  text-decoration-line: none;
 }
 a:hover {
   color: var(--accent);
+  text-decoration-line: underline;
 }
 p {
-
 }
 textarea {
   width: 100%;

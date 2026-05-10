@@ -9,6 +9,8 @@ interface Props {
   accessDate: string | null; // 例如 "10-May-2026"
 }
 
+import { mdiChevronUpCircleOutline  } from "@mdi/js";
+
 const { index, authors, title, site, pubDate, url, accessDate } = Astro.props;
 
 const contentLink = `#reference-content${index}`;
@@ -24,13 +26,21 @@ function buildIEEEReference(
   accessDate: string | null, // 例如 "10-May-2026" 或 "2026-05-10"
 ): string {
   const pubPart = pubDate ? `, ${pubDate}` : "";
-  const accessPart = accessDate ? ` [Accessed: ${accessDate}]` : "";
-  return `[${index}] ${authors}, "${title}," ${site}${pubPart}. [Online]. Available: ${url}.${accessPart}`;
+  const accessPart = accessDate ? ` (Accessed: ${accessDate})` : "";
+  return `[${index}] ${authors}, "${title}," ${site}${pubPart}. ${url}.${accessPart}.`;
 }
 ---
 
 <div>
-  <a href={contentLink}>↑</a><a name={referenceName} target="_blank" href={url}>
+  <a href={contentLink} style="text-decoration-line: none">
+    <svg
+      style="display: inline-block; height: 1em; width: 1em; margin:auto"
+      viewBox="0 0 24 24"
+    >
+      <path d={mdiChevronUpCircleOutline }></path>
+    </svg>
+  </a>
+  <a name={referenceName} style="word-break: break-all;" target="_blank" href={url}>
     {buildIEEEReference(index, authors, title, site, pubDate, url, accessDate)}
   </a>
 </div>
