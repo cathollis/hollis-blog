@@ -1,0 +1,38 @@
+---
+interface Props {
+  index: number;
+  authors: string;
+  title: string;
+  site: string;
+  pubDate: string | null; // 例如 "Nov. 10, 2025"
+  url: string;
+  accessDate: string | null; // 例如 "10-May-2026"
+}
+
+const { index, authors, title, site, pubDate, url, accessDate } = Astro.props;
+
+const contentLink = `#reference-content${index}`;
+const referenceName = `reference${index}`;
+
+function buildIEEEReference(
+  index: number,
+  authors: string,
+  title: string,
+  site: string,
+  pubDate: string | null, // 例如 "Nov. 10, 2025" 或 "2025-11-10"（你已格式化好）
+  url: string,
+  accessDate: string | null, // 例如 "10-May-2026" 或 "2026-05-10"
+): string {
+  const pubPart = pubDate ? `, ${pubDate}` : "";
+  const accessPart = accessDate ? ` [Accessed: ${accessDate}]` : "";
+  return `[${index}] ${authors}, "${title}," ${site}${pubPart}. [Online]. Available: ${url}.${accessPart}`;
+}
+---
+
+<div>
+  <a href={contentLink}>↑</a><a name={referenceName} target="_blank" href={url}>
+    {buildIEEEReference(index, authors, title, site, pubDate, url, accessDate)}
+  </a>
+</div>
+
+<style></style>
