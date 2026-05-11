@@ -9,7 +9,7 @@ interface Props {
   accessDate: string | null; // 例如 "10-May-2026"
 }
 
-import { mdiChevronUpCircleOutline  } from "@mdi/js";
+import { mdiChevronUpCircleOutline } from "@mdi/js";
 
 const { index, authors, title, site, pubDate, url, accessDate } = Astro.props;
 
@@ -31,18 +31,24 @@ function buildIEEEReference(
 }
 ---
 
-<div>
-  <a href={contentLink} style="text-decoration-line: none">
+<p style="">
+  <a href={contentLink} style="text-decoration-line: none; margin-right: 0.25em;">
     <svg
-      style="display: inline-block; height: 1em; width: 1em; margin:auto"
+      style="display: inline-block; vertical-align: text-top; height: 1em; width: 1em;"
       viewBox="0 0 24 24"
     >
-      <path d={mdiChevronUpCircleOutline }></path>
+      <path d={mdiChevronUpCircleOutline}></path>
     </svg>
   </a>
-  <a name={referenceName} style="word-break: break-all;" target="_blank" href={url}>
+  <a
+    name={referenceName}
+    style="word-break: break-all; "
+    target="_blank"
+    href={url}
+  >
     {buildIEEEReference(index, authors, title, site, pubDate, url, accessDate)}
   </a>
-</div>
+</p>
 
-<style></style>
+<style>
+</style>
