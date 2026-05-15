@@ -9,12 +9,21 @@ const publicImageUrl = import.meta.env.PUBLIC_CDN_BASE_URL;
   description="About Hollis and cathollis.com"
   pubDate={new Date("April 05 2026")}
 >
-  <div style="display: flex;align-items: center;flex-direction: column;">
-    <img
-      style="width: 16rem; height: 16rem"
-      src={`${publicImageUrl}/resources/avatars/1440x.webp`}
-    />
-    <p>My avatar</p>
+  <div style="display: flex; flex-direction: row;">
+    <div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center;">
+      <img
+        style="width: 16rem; height: 16rem"
+        src={`${publicImageUrl}/resources/avatars/1440x.webp`}
+      />
+      <p>My avatar</p>
+    </div>
+    <div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center;">
+      <img
+        style="width: 16rem; height: 16rem"
+        src={'/favicon.svg'}
+      />
+      <p>cathollis.com LOGO</p>
+    </div>
   </div>
 
   <p>
@@ -26,8 +35,13 @@ const publicImageUrl = import.meta.env.PUBLIC_CDN_BASE_URL;
   <div>
     <h4>Image</h4>
     <h5>aspect ratio</h5>
-    <p>Images on this website use one of the following aspect ratio: 3:2, 16:9, 16:10, 1.35:1, 1.85:1, 2.35:1, 4:3, 1:1</p>
-    <p>They are all common aspect ratio in photograph, television, web and films.</p>
+    <p>
+      Images on this website use one of the following aspect ratio: 3:2, 16:9,
+      16:10, 1.35:1, 1.85:1, 2.35:1, 4:3, 1:1
+    </p>
+    <p>
+      They are all common aspect ratio in photograph, television, web and films.
+    </p>
     <h5>size</h5>
     <p>All images will be resize to 1440x.</p>
     <h5>colorspace</h5>
@@ -35,8 +49,13 @@ const publicImageUrl = import.meta.env.PUBLIC_CDN_BASE_URL;
     <h5>encode</h5>
     <p>webp</p>
     <h5>desensitization</h5>
-    <p>For the characters appearing in the picture, apply the mosaic algorithm.</p>
-    <p>For reflective objects appearing in the picture, because they may expose information, apply the gaussian blur algorithm.</p>
+    <p>
+      For the characters appearing in the picture, apply the mosaic algorithm.
+    </p>
+    <p>
+      For reflective objects appearing in the picture, because they may expose
+      information, apply the gaussian blur algorithm.
+    </p>
     <h5>command</h5>
     using imagemagick
     <pre

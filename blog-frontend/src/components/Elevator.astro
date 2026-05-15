@@ -1,0 +1,32 @@
+---
+import { mdiArrowUp } from "@mdi/js";
+---
+
+<button data-top-button class="top-button"> 
+    <svg
+      style="height: 100%; width: 100%;"
+      viewBox="0 0 24 24"
+    >
+      <path d={mdiArrowUp}></path>
+    </svg>  
+</button>
+
+<style>
+  .top-button {
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    right: 5vh;
+    bottom: 5vh;
+  }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll("[data-top-button]");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      window.scrollTo(0, 0);
+    });
+  });
+</script>
